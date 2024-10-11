@@ -35,4 +35,60 @@ Este projeto implementa o banco de dados para um sistema de streaming de música
     * Título
     * Usuário ao qual pertence
     * Músicas que a playlist contém
+**Requisitos:**
+
+* MySQL
+* Python 3
+
+**Instalação:**
+
+1. Crie um banco de dados chamado "streaming_musica".
+2. Execute o script  create_tables.sql  para criar as tabelas do banco de dados.
+3. Execute o script  insert_data.py  para inserir dados aleatórios nas tabelas.
+
+Uso:
+
+* Use o script insert_data.py para inserir mais dados no banco de dados.
+* Utilize o MySQL Workbench ou outro cliente SQL para consultar e manipular os dados.
+
+*Diagrama Relacional:*
+
+```mermaid
+erDiagram
+  MUSICA ||--|{ DISCO : pertencea
+  ARTISTA ||--|{ MUSICA : interpreta
+  ARTISTA ||--|{ DISCO : criadopor
+  USUARIO ||--|{ PLAYLIST : possui
+  PLAYLIST ||--|{ MUSICA : contem
+
+  MUSICA {
+    id INT PK
+    titulo VARCHAR(255)
+    duracao INT
+  }
+
+  DISCO {
+    id INT PK
+    titulo VARCHAR(255)
+    data_lancamento DATE
+  }
+
+  ARTISTA {
+    id INT PK
+    nome VARCHAR(255)
+    data_nascimento DATE
+  }
+
+  USUARIO {
+    id INT PK
+    nome VARCHAR(255)
+    email VARCHAR(255) UNIQUE
+    data_registro  
+}
+
+  PLAYLIST {
+    id INT PK
+    titulo VARCHAR(255)
+  }
+```
 
