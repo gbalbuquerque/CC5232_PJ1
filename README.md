@@ -92,3 +92,17 @@ erDiagram
   }
 ```
 
+## *Modelo Relacional em 3FN (Normalização)*:
+
+*Musica: (id, titulo, duracao, disco_id, artista_id)*
+
+*Disco: (id, titulo, data_lancamento, artista_id)*
+
+*Artista: (id, nome, data_nascimento)*
+
+*Usuario: (id, nome, email, data_registro)*
+
+*Playlist: (id, titulo, usuario_id)*
+
+*Playlist_Musica: (playlist_id, musica_id)*
+
