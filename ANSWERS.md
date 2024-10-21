@@ -18,7 +18,7 @@ WHERE id IN (SELECT artista_id FROM Musica GROUP BY artista_id HAVING COUNT(*) >
 **3. Quais são os títulos dos discos lançados após 2020?**
 
 ```sql
-SELECT titulo FROM Disco WHERE data_lancamento > '2020-12-31';
+SELECT titulo FROM Disco WHERE data_lancamento > '2020/12/31';
 ```
 
 **4. Liste os títulos das músicas e os nomes dos artistas que as interpretam, ordenados pelo título da música.**
