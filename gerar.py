@@ -30,6 +30,11 @@ for _ in range(20):
     titulo = lorem.words(4)
     cursor.execute("INSERT INTO disco (titulo) VALUES (%s)", (titulo))
 
+# Dados aleatórios musica
+for _ in range(20):
+    duracao = fake.time()
+    cursor.execute("INSERT INTO musica (duracao) VALUES (%s)", (duracao))
+
 conexao.commit()
 
 conexao.close()
