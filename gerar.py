@@ -1,4 +1,5 @@
 import mysql.connector
+import random
 from faker import Faker
 from lorem_text import lorem
 
@@ -18,22 +19,71 @@ if conexao.is_connected():
     
 # Dados aleatórios artista
 for _ in range(20):
-    nome = fake.name()
-    cursor.execute("INSERT INTO artista (nome) VALUES (%s)", (nome,))
-for _ in range(20):
     data = fake.date()
-    novaData = data.replace('-','/')  
-    cursor.execute("INSERT INTO artista (data_nascimento) VALUES (%s)",(novaData))
-
-# Dados aleatórios disco
+    nome = fake.name()
+    cursor.execute("INSERT INTO artista (nome,data_nascimento) VALUES (%s,%s)", (nome,data))
 for _ in range(20):
     titulo = lorem.words(4)
-    cursor.execute("INSERT INTO disco (titulo) VALUES (%s)", (titulo))
+    data = fake.date()
+    cursor.execute("INSERT INTO artista (nome,data_nascimento) VALUES (%s,%s)", (nome,data))
 
-# Dados aleatórios musica
+
+conexao.commit()
+
+cursor.execute("SELECT id FROM artista")
+artistas = cursor.fetchall()
+
+# Gerar dados aleatórios para Discos
 for _ in range(20):
-    duracao = fake.time()
-    cursor.execute("INSERT INTO musica (duracao) VALUES (%s)", (duracao))
+    titulo = lorem.words(4)
+    data_lancamento = fake.date()
+    artista_id = random.choice(artistas)[0]
+
+    cursor.execute("INSERT INTO disco (titulo, data_lancamento, artista_id) VALUES (%s, %s, %s)",  (titulo, data_lancamento, artista_id))
+
+conexao.commit()
+
+# Gerar dados aleatórios para Musica
+
+cursor.execute("SELECT id FROM disco")
+discos = cursor.fetchall()
+
+for _ in range(50):
+    titulo = lorem.words(3)
+    duracao = round(random.uniform(0, 5.5),2)
+    artista_id = random.choice(artistas)[0]
+    disco_id = random.choice(discos)[0]
+    cursor.execute("INSERT INTO musica (titulo, duracao, artista_id, disco_id) VALUES (%s, %s, %s, %s)", (titulo, duracao, artista_id, disco_id))
+
+conexao.commit()
+
+# Gerar dados aleatórios para Usuario
+
+lista_de_dominios = (
+    'com',
+    'com.br',
+    'net',
+    'net.br',
+    'org',
+    'org.br',
+    'gov',
+    'gov.br'
+)
+
+for _ in range(20):
+    primeiro_nome = fake.first_name()
+    ultimo_nome = fake.last_name()
+
+    company = fake.company().split()[0].strip(',')
+    dns_org = fake.random_choices(
+        elements=lista_de_dominios,
+        length=1
+    )[0]
+    email = f"{primeiro_nome}.{ultimo_nome}@{company}.{dns_org}".lower()
+    nome = fake.name()
+    data_registro = fake.date()
+
+    cursor.execute("INSERT INTO usuario (nome,email,data_registro) VALUES (%s, %s, %s)" , (nome,email,data_registro))
 
 conexao.commit()
 
