@@ -110,7 +110,7 @@ erDiagram
 > [!NOTE]
 > Para executar esse código você precisará ter instalado na sua máquina o Python e o MySQL
 
-## Tutoriais de download
+### Tutoriais de download
    + [Como baixar o MySQL](https://www.youtube.com/watch?v=IEUgVwjXF0o&pp=ygUTQ29tbyBiYWl4YXIgbyBNeVNRTA%3D%3D)
    + [Como baixar o python](https://www.youtube.com/watch?v=0pG4NrucQR4&pp=ygUUQ29tbyBiYWl4YXIgbyBweXRob24%3D)
 
