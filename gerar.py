@@ -33,13 +33,17 @@ conexao.commit()
 cursor.execute("SELECT id FROM artista")
 artistas = cursor.fetchall()
 
+cursor.execute("SELECT id FROM musica")
+musicas = cursor.fetchall()
 # Gerar dados aleatórios para Discos
 for _ in range(20):
     titulo = lorem.words(4)
     data_lancamento = fake.date()
     artista_id = random.choice(artistas)[0]
-
-    cursor.execute("INSERT INTO disco (titulo, data_lancamento, artista_id) VALUES (%s, %s, %s)",  (titulo, data_lancamento, artista_id))
+    num_musicas = random.randint(3, 20)
+    musicas_selecionadas = random.sample([musica[0] for musica in musicas], num_musicas)
+    musica_ids = ','.join(map(str, musicas_selecionadas))
+    cursor.execute("INSERT INTO disco (titulo, data_lancamento, artista_id,musica_ids) VALUES (%s, %s, %s,%s)",  (titulo, data_lancamento, artista_id,musica_ids))
 
 conexao.commit()
 
@@ -52,7 +56,7 @@ for _ in range(50):
     titulo = lorem.words(3)
     duracao = round(random.uniform(0, 5.5),2)
     artista_id = random.choice(artistas)[0]
-    disco_id = random.choice(discos)[0]
+    disco_id = random.choice    (discos)[0]
     cursor.execute("INSERT INTO musica (titulo, duracao, artista_id, disco_id) VALUES (%s, %s, %s, %s)", (titulo, duracao, artista_id, disco_id))
 
 conexao.commit()
@@ -89,19 +93,28 @@ for _ in range(20):
 
 conexao.commit()
 
+
+cursor.execute("SELECT id FROM musica")
+musicas = cursor.fetchall()
+
 # Gerar dados aleatórios para Playlist
 
-cursor.execute("SELECT id FROM usuario")
+cursor.execute("SELECT id FROM usuario")    
 usuarios = cursor.fetchall()
 
 for _ in range(20):
     titulo = lorem.words(3)
     usuario_id = random.choice(usuarios)[0]
-    cursor.execute("INSERT INTO playlist (titulo,usuario_id) VALUES (%s,%s)",(titulo,usuario_id))
+
+    num_musicas = random.randint(3, 20)
+    musicas_selecionadas = random.sample([musica[0] for musica in musicas], num_musicas)
+
+    musica_ids = ','.join(map(str, musicas_selecionadas))
+    cursor.execute("INSERT INTO playlist (titulo,usuario_id,musica_ids) VALUES (%s,%s,%s)",(titulo,usuario_id,musica_ids))
 
 conexao.commit()
 
 # Gerar dados aleatorios PlaylistMusica
 
-conexao.close()
+conexao.close() 
 cursor.close()    
