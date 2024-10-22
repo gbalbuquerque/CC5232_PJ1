@@ -84,6 +84,8 @@ for _ in range(20):
     data_registro = fake.date()
 
     cursor.execute("INSERT INTO usuario (nome,email,data_registro) VALUES (%s, %s, %s)" , (nome,email,data_registro))
+    
+conexao.commit()
 
 # Gerar dados aleatórios para Playlist
 
