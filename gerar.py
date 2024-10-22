@@ -67,7 +67,9 @@ lista_de_dominios = (
     'org',
     'org.br',
     'gov',
-    'gov.br'
+    'gov.br',
+    'gmail.com',
+    'outlook.com'
 )
 
 for _ in range(20):
