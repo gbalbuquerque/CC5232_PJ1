@@ -85,6 +85,16 @@ for _ in range(20):
 
     cursor.execute("INSERT INTO usuario (nome,email,data_registro) VALUES (%s, %s, %s)" , (nome,email,data_registro))
 
+# Gerar dados aleatórios para Playlist
+
+cursor.execute("SELECT id FROM usuario")
+usuarios = cursor.fetchall()
+
+for _ in range(20):
+    titulo = lorem.words(3)
+    usuario_id = random.choice(usuarios)[0]
+    cursor.execute("INSERT INTO playlist (titulo,usuario_id) VALUES (%s,%s)",(titulo,usuario_id))
+
 conexao.commit()
 
 conexao.close()
