@@ -126,11 +126,11 @@ erDiagram
 
 1. **O usuário abrir o  "MySQL Workbench" e então deve ir diretamente em "Run SQL Script" e abrir o "query.sql" que já estará instalado no pc do mesmo.**
 2. **Abra o Visual Code Studio e logo após isso o usuário deve abrir o "gerar.py" e então tem que trocar o "user" e o "password" que foram trocados pelo próprio na hora da instalação.**
-3. **O usuário precisa importar as bibliotecas:
+3. **O usuário precisa importar as bibliotecas:**
   + ``` pip install lorem_text ```
   + ``` pip install faker ```
   + ``` pip install mysql-connector ```
-  + ``` pip install random ```**
+  + ``` pip install random ```
 4. **Execute o código.**
 
 ###  Uso:
