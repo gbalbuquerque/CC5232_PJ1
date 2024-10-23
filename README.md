@@ -133,7 +133,4 @@ erDiagram
   + ``` pip install random ```
 4. **Execute o código.**
 
-###  Uso:
 
-* Use o script `insert_data.py` para inserir mais dados no banco de dados.
-* Utilize o MySQL Workbench ou outro cliente SQL para consultar e manipular os dados.
