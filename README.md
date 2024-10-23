@@ -115,3 +115,25 @@ erDiagram
    + [Como baixar o python](https://www.youtube.com/watch?v=0pG4NrucQR4&pp=ygUUQ29tbyBiYWl4YXIgbyBweXRob24%3D)
 
    
+##  Instalação:
+
+1. **Crie uma pasta.**
+2. **Navegue até a pasta.**
+3. **Execute este comando:  ```git clone https://github.com/gbalbuquerque/CC5232_PJ1.git```**  
+ 
+
+##  Como executar o código
+
+1. **O usuário abrir o  "MySQL Workbench" e então deve ir diretamente em "Run SQL Script" e abrir o "query.sql" que já estará instalado no pc do mesmo.**
+2. **Abra o Visual Code Studio e logo após isso o usuário deve abrir o "gerar.py" e então tem que trocar o "user" e o "password" que foram trocados pelo próprio na hora da instalação.**
+3. **O usuário precisa importar as bibliotecas:
+  + ``` pip install lorem_text ```
+  + ``` pip install faker ```
+  + ``` pip install mysql-connector ```
+  + ``` pip install random ```**
+4. **Execute o código.**
+
+###  Uso:
+
+* Use o script `insert_data.py` para inserir mais dados no banco de dados.
+* Utilize o MySQL Workbench ou outro cliente SQL para consultar e manipular os dados.
