@@ -135,4 +135,5 @@ erDiagram
 
 Pronto! Agora os dados aleatórios foram gerados dentro das tabelas
 
+### As queries que resolvem os 20 items da atividade estão [aqui](https://github.com/gbalbuquerque/CC5232_PJ1/blob/main/ANSWERS.md)
 
