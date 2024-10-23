@@ -133,4 +133,6 @@ erDiagram
   + ``` pip install random ```
 4. **Execute o código.**
 
+Pronto! Agora os dados aleatórios foram gerados dentro das tabelas
+
 
