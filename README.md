@@ -108,7 +108,7 @@ erDiagram
 
 ## Como executar o código
 > [!NOTE]
-> Para executar esse código você precisará ter instalado na sua máquina o Python e o MySQL
+> Para executar esse código você precisará ter instalado na sua máquina o Python, MySQL, um editor de código fonte (nesse caso usaremos o VSC) e o Git
 
 ### Tutoriais de download
    + [Como baixar o MySQL](https://www.youtube.com/watch?v=IEUgVwjXF0o&pp=ygUTQ29tbyBiYWl4YXIgbyBNeVNRTA%3D%3D)
@@ -125,7 +125,7 @@ erDiagram
 ##  Como executar o código
 
 1. **O usuário abrir o  "MySQL Workbench" e então deve ir diretamente em "Run SQL Script" e abrir o "query.sql" que já estará instalado no pc do mesmo.**
-2. **Abra o Visual Code Studio e logo após isso o usuário deve abrir o "gerar.py" e então tem que trocar o "user" e o "password" que foram trocados pelo próprio na hora da instalação.**
+2. **Abra o Visual Studio Code e em seguida abrir o "gerar.py" e então tem que trocar o "user" e o "password" que foram trocados pelo próprio na hora da instalação.**
 3. **O usuário precisa importar as bibliotecas:**
   + ``` pip install lorem_text ```
   + ``` pip install faker ```
